@@ -1,63 +1,127 @@
-# Next + Netlify Starter
+# WebDAV Panel
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/46648482-644c-4c80-bafb-872057e51b6b/deploy-status)](https://app.netlify.com/sites/next-dev-starter/deploys)
+Modern ve kullanıcı dostu bir WebDAV istemci paneli. Dosyalarınızı güvenle yönetin, görüntüleyin ve düzenleyin.
 
-This is a [Next.js](https://nextjs.org/) v15 project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and set up to be instantly deployed to [Netlify](https://url.netlify.com/SyTBPVamO)!
+![WebDAV Panel](https://img.shields.io/badge/WebDAV-Panel-blue)
+![Next.js](https://img.shields.io/badge/Next.js-15.0.0-black)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
 
-This project is a very minimal starter that includes 2 sample components, a global stylesheet, a `netlify.toml` for deployment, and a `jsconfig.json` for setting up absolute imports and aliases. With Netlify, you'll have access to features like Preview Mode, server-side rendering/incremental static regeneration via Netlify Functions, and internationalized routing on deploy automatically.
+## 🌟 Özellikler
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex-cs)
+- **Modern Arayüz**: Koyu/açık tema desteği ile modern ve responsive tasarım
+- **Dosya Yönetimi**: Dosya yükleme, silme, yeniden adlandırma ve klasör oluşturma
+- **Dosya Önizleme**: Resim, video, ses ve metin dosyalarını doğrudan görüntüleme
+- **Sürükle & Bırak**: Kolay dosya yükleme için sürükle-bırak desteği
+- **Güvenli Bağlantı**: HTTPS desteği ile güvenli WebDAV bağlantısı
+- **Hızlı Erişim**: Son kullanılan bağlantıları hatırlama
+- **Performans**: Optimize edilmiş dosya listeleme ve önizleme
 
-(If you click this button, it will create a new repo for you that looks exactly like this one, and sets that repo up immediately for deployment on Netlify)
+## 🚀 Kurulum
 
-## Table of Contents:
+### Gereksinimler
+- Node.js 18+ 
+- npm veya yarn
 
-- [Getting Started](#getting-started)
-- [Installation options](#installation-options)
-- [Testing](#testing)
-  - [Included Default Testing](#included-default-testing)
-  - [Removing Renovate](#removing-renovate)
+### Adımlar
 
-## Getting Started
-
-First, run the development server:
-
+1. **Projeyi klonlayın:**
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/your-username/webdav-panel.git
+cd webdav-panel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Bağımlılıkları yükleyin:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. **Geliştirme sunucusunu başlatın:**
+```bash
+npm run dev
+```
 
-### Installation options
+4. **Tarayıcınızda açın:**
+```
+http://localhost:3000
+```
 
-**Option one:** One-click deploy
+## 📦 Kullanılabilir Scriptler
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-netlify-starter&utm_source=github&utm_medium=nextstarter-cs&utm_campaign=devex-cs)
+```bash
+npm run dev      # Geliştirme sunucusu
+npm run build    # Production build
+npm run start    # Production sunucusu
+npm run lint     # Kod kalitesi kontrolü
+npm run export   # Static export
+```
 
-**Option two:** Manual clone
+## 🔧 Konfigürasyon
 
-1. Clone this repo: `git clone https://github.com/netlify-templates/next-netlify-starter.git`
-2. Navigate to the directory and run `npm install`
-3. Run `npm run dev`
-4. Make your changes
-5. Connect to [Netlify](https://url.netlify.com/Bk4UicocL) manually (the `netlify.toml` file is the one you'll need to make sure stays intact to make sure the export is done and pointed to the right stuff)
+### WebDAV Sunucu Ayarları
+- **URL**: `https://your-server.com/webdav`
+- **Kullanıcı Adı**: WebDAV kullanıcı adınız
+- **Şifre**: WebDAV şifreniz
 
-## Testing
+### Desteklenen Dosya Türleri
+- **Resimler**: JPG, PNG, GIF, BMP, WebP, SVG
+- **Videolar**: MP4, MOV, AVI, MKV
+- **Ses**: MP3, WAV, OGG
+- **Belgeler**: PDF, DOC, DOCX
+- **Arşivler**: ZIP, RAR, 7Z, TAR, GZ
+- **Kod**: JS, JSX, TS, TSX, HTML, CSS, JSON, PY
 
-### Included Default Testing
+## 🎨 Tema Desteği
 
-We’ve included some tooling that helps us maintain these templates. This template currently uses:
+- **Açık Tema**: Gün ışığında rahat görüntüleme
+- **Koyu Tema**: Gece kullanımı için göz dostu
 
-- [Renovate](https://www.mend.io/free-developer-tools/renovate/) - to regularly update our dependencies
-- [Cypress](https://www.cypress.io/) - to run tests against how the template runs in the browser
-- [Cypress Netlify Build Plugin](https://github.com/cypress-io/netlify-plugin-cypress) - to run our tests during our build process
+## 🔒 Güvenlik
 
-If your team is not interested in this tooling, you can remove them with ease!
+- HTTPS bağlantı desteği
+- Şifreler tarayıcı belleğinde güvenli saklanır
+- Oturum bilgileri session storage'da tutulur
 
-### Removing Renovate
+## 🛠️ Teknolojiler
 
-In order to keep our project up-to-date with dependencies we use a tool called [Renovate](https://github.com/marketplace/renovate). If you’re not interested in this tooling, delete the `renovate.json` file and commit that onto your main branch.
+- **Frontend**: Next.js 15, React 18
+- **Styling**: CSS Modules
+- **Icons**: React Icons
+- **WebDAV**: webdav library
+- **Deployment**: Netlify
+
+## 📁 Proje Yapısı
+
+```
+webdav-panel/
+├── components/          # React bileşenleri
+├── context/            # React Context'leri
+├── pages/              # Next.js sayfaları
+├── styles/             # Global stiller
+├── public/             # Statik dosyalar
+└── pages/api/          # API routes
+```
+
+## 🤝 Katkıda Bulunma
+
+1. Fork yapın
+2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
+3. Commit yapın (`git commit -m 'Add amazing feature'`)
+4. Push yapın (`git push origin feature/amazing-feature`)
+5. Pull Request açın
+
+## 📄 Lisans
+
+Bu proje MIT lisansı altında lisanslanmıştır. Detaylar için [LICENSE](LICENSE) dosyasına bakın.
+
+## 🐛 Sorun Bildirimi
+
+Bir hata bulduysanız, lütfen [Issues](https://github.com/your-username/webdav-panel/issues) sayfasında bildirin.
+
+## 📞 İletişim
+
+- **GitHub**: [@your-username](https://github.com/your-username)
+- **Email**: your-email@example.com
+
+---
+
+⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!

@@ -6,12 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "lint": "next lint"
   },
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.11.3",
+    "multer": "^2.0.1",
     "next": "^15.0.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0",
+    "webdav": "^5.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.29.0",
+    "eslint-config-next": "^15.3.4"
   }
 }

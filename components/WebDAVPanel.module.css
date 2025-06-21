@@ -1,0 +1,444 @@
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--background-primary);
+}
+
+.main {
+  flex: 1;
+  padding: 20px 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Prevent full-page scroll */
+}
+
+.mainContent {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden; /* Prevent this level from scrolling */
+}
+
+.explorerContainer {
+  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  height: 100%;
+  overflow-y: auto; /* Allow sidebar to scroll if content overflows */
+  background-color: var(--background-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+.resizer {
+  flex-shrink: 0;
+  width: 5px;
+  background-color: transparent;
+  cursor: col-resize;
+  transition: background-color 0.2s ease;
+}
+
+.resizer:hover {
+  background-color: var(--accent-color);
+}
+
+.resizeHandle {
+  flex-shrink: 0;
+  width: 5px;
+  background-color: transparent;
+  cursor: col-resize;
+  transition: background-color 0.2s ease;
+}
+
+.resizeHandle:hover {
+  background-color: var(--accent-color);
+}
+
+.contentArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.breadcrumb {
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumbItem {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbItem:hover {
+  color: var(--accent-color);
+}
+
+.breadcrumbSeparator {
+  margin: 0 0.5rem;
+  color: var(--text-color-secondary);
+}
+
+.toolbarActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.loadingMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: var(--text-color-secondary);
+  font-size: 1.1rem;
+}
+
+.errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  color: #e74c3c;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+.breadcrumbs {
+  font-size: 1.1rem;
+  color: var(--text-color-secondary);
+}
+
+.breadcrumbs span {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.breadcrumbs span:hover {
+    color: var(--accent-color);
+}
+
+.viewControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.controlButton {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-color-secondary);
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.controlButton:hover {
+  background-color: var(--bg-color-secondary);
+  color: var(--accent-color);
+}
+
+.actionBar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.actionButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color-secondary);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+    background-color: var(--bg-color-secondary);
+    color: var(--accent-color);
+}
+
+.fileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.fileItem {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible; /* For hover actions */
+  border: 1px solid transparent;
+}
+
+.fileItem:hover {
+  background-color: var(--bg-color-secondary);
+  border-color: var(--border-color);
+}
+
+.fileItem:hover .fileActions {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fileIcon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px; /* Fixed height for icon area */
+}
+
+.thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crop image to fit area */
+  border-radius: 4px;
+}
+
+.genericFileContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.extensionBadge {
+  position: absolute;
+  bottom: -5px;
+  right: 5px;
+  background-color: #555;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.fileItem:hover .fileIcon {
+    color: var(--accent-color);
+}
+
+.fileName {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-top: 0.5rem;
+  word-break: break-word;
+  line-height: 1.2;
+}
+
+.fileSize {
+  font-size: 0.75rem;
+  color: var(--text-color-secondary);
+  text-align: center;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+.renameInput {
+  width: 100%;
+  padding: 4px 6px;
+  border: 1px solid var(--primary-accent);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  border-radius: 4px;
+  font-size: inherit;
+  font-family: inherit;
+  outline: none;
+}
+
+.fileItem.renaming {
+  background-color: var(--background-tertiary);
+}
+
+.fileActions {
+  position: absolute;
+  bottom: -40px; /* Hide below the card */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--bg-color-tertiary);
+  padding: 0.3rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  z-index: 10;
+}
+
+.fileActions button {
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.fileActions button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.error {
+    color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 10px 0;
+  }
+  
+  .container {
+    padding: 0 10px;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    height: auto;
+  }
+  
+  .leftPanel {
+    height: 300px;
+  }
+  
+  .rightPanel {
+    height: auto;
+  }
+  
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .toolbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .fileItem {
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+  }
+  
+  .fileType, .fileSize {
+    display: none;
+  }
+  
+  .fileActions {
+    display: flex;
+    gap: 5px;
+  }
+}
+
+/* Scrollbar Styling */
+.fileList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.fileList::-webkit-scrollbar-track {
+  background: var(--background-tertiary);
+}
+
+.fileList::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+.fileList::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+.dropOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--primary-accent);
+}
+
+.dropMessage {
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.dropMessage svg {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+} 

@@ -1,0 +1,170 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.viewer {
+  background-color: var(--bg-color-darker);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--bg-color-darkest);
+  border-bottom: 1px solid var(--border-color);
+  flex-shrink: 0;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.fileNameContainer {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.fileName {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  cursor: text;
+}
+
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  color: var(--text-color-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.actionButton:hover {
+  color: var(--accent-color);
+}
+
+.content {
+  flex-grow: 1;
+  position: relative;
+  background-color: var(--background-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+  object-fit: contain;
+}
+
+.centeredMessage {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: var(--text-color-secondary);
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.renameForm {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.renameInput {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--primary-accent);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  outline: none;
+}
+
+.renameSubmitButton {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.renameSubmitButton:hover {
+  background: var(--accent-color-dark);
+}
+
+.textContent {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  resize: none;
+}
+
+.textContent:focus {
+  outline: 1px solid var(--primary-accent);
+  border-color: var(--primary-accent);
+} 

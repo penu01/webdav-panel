@@ -1,0 +1,136 @@
+.card {
+  background: linear-gradient(135deg, #f5f7fa, #eef2f7);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.info {
+  margin-bottom: 20px;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.server {
+  font-weight: 600;
+  color: #4a5568;
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user {
+  margin: 0;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.passwordSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.passwordLabel {
+  font-size: 0.8rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.passwordValue {
+  font-size: 0.9rem;
+  color: #374151;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  flex: 1;
+}
+
+.showPasswordButton {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  color: #667eea;
+}
+
+.showPasswordButton:hover {
+  background: #667eea;
+  color: white;
+  border-color: #667eea;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+}
+
+.loginButton, .forgetButton {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.loginButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.loginButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.forgetButton {
+  background: transparent;
+  color: #718096;
+  border: 1px solid #e2e8f0;
+}
+
+.forgetButton:hover {
+  background: #f8fafc;
+  color: #ef4444;
+  border-color: #fca5a5;
+} 
