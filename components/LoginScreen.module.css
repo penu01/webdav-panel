@@ -84,11 +84,13 @@
   border-radius: 12px;
   overflow: hidden;
   transition: all 0.2s ease;
+  background-color: var(--background-tertiary);
 }
 
 .urlInputs:focus-within {
   border-color: var(--primary-accent);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background-color: var(--background-secondary);
 }
 
 .protocolBlock {
@@ -121,7 +123,7 @@
 .domainInput {
   flex: 1;
   border: none;
-  padding: 12px 0 12px 8px;
+  padding: 12px 0 12px 14px;
   font-size: 14px;
   background: transparent;
   color: var(--text-primary);
@@ -453,6 +455,6 @@
 .inputGroup input:-webkit-autofill:focus,
 .inputGroup input:-webkit-autofill:active {
   -webkit-text-fill-color: var(--text-primary) !important;
-  -webkit-box-shadow: 0 0 0 30px var(--background-secondary) inset !important;
-  background-clip: content-box !important; /* Safari için */
+  -webkit-box-shadow: 0 0 0 30px var(--background-tertiary) inset !important;
+  background-clip: content-box !important;
 } 
