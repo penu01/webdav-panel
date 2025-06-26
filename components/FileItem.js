@@ -90,7 +90,7 @@ export default function FileItem({
           const blob = await response.blob();
           const url = URL.createObjectURL(blob);
           setThumbnailUrl(url);
-      } catch (error) {
+      } catch {
         // Handle error silently
       }
   };

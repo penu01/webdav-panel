@@ -111,8 +111,8 @@ export default function QuizIndex() {
                 <li>Maksimum puan: 100</li>
               </ul>
               <ul className="quiz-rules-list">
-                <li>Sorular ve şıklar her quiz'de karıştırılır</li>
-                <li>Her quiz'de farklı 2 soru bonus olur</li>
+                <li>Sorular ve şıklar her quiz&apos;de karıştırılır</li>
+                <li>Her quiz&apos;de farklı 2 soru bonus olur</li>
                 <li>Sonuçlarınız otomatik olarak kaydedilir</li>
                 <li>İstediğiniz kadar tekrar edebilirsiniz</li>
               </ul>

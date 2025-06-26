@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { FaDownload, FaTrash, FaPencilAlt, FaTimes, FaSave } from 'react-icons/fa';
 import styles from './FileViewer.module.css';
-import { FaSave, FaDownload, FaPencilAlt, FaTrash, FaTimes, FaSpinner, FaExclamationTriangle } from 'react-icons/fa';
 
 const isTextFile = (filename) => {
     const textExtensions = ['txt', 'md', 'json', 'xml', 'html', 'css', 'js', 'log', 'ini', 'cfg', 'py', 'sh', 'bat'];

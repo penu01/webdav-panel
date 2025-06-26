@@ -4,21 +4,10 @@ import Header from '@components/Header';
 import Settings from '@components/Settings';
 import Explorer from '@components/Explorer';
 import styles from './WebDAVPanel.module.css';
-import { FaFolder, FaFile, FaDownload, FaTrash, FaUpload, FaFileImage, FaFileVideo, FaFileAudio, FaFilePdf, FaFileArchive, FaFileWord, FaFileCode, FaFolderPlus, FaPencilAlt } from 'react-icons/fa';
+import { FaFolder, FaFile, FaDownload, FaTrash, FaUpload, FaFileImage, FaFileVideo, FaFileAudio, FaFilePdf, FaFileArchive, FaFileWord, FaFileCode, FaFolderPlus, FaPencilAlt, FaChevronLeft, FaChevronRight, FaSignOutAlt, FaCog, FaEye, FaEyeSlash } from 'react-icons/fa';
 import FileItem from './FileItem';
 import ContextMenu from './ContextMenu';
-
-// Dosya boyutunu formatlayan yardımcı fonksiyon
-const formatFileSize = (bytes) => {
-  if (bytes === 0) return '0 B';
-  if (bytes === null || bytes === undefined) return '-';
-  
-  const k = 1024;
-  const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
-};
+import { useTheme } from '@context/ThemeContext';
 
 export default function WebDAVPanel({ client, onDisconnect, path, onFileClick }) {
   const [files, setFiles] = useState([]);
@@ -41,6 +30,17 @@ export default function WebDAVPanel({ client, onDisconnect, path, onFileClick })
 
   const [contextMenu, setContextMenu] = useState(null);
   const [renamingFile, setRenamingFile] = useState(null);
+
+  const findNode = useCallback((tree, path) => {
+    for (const node of tree) {
+      if (node.filename === path) return node;
+      if (node.children) {
+        const found = findNode(node.children, path);
+        if (found) return found;
+      }
+    }
+    return null;
+  }, []);
 
   const handleResizeMouseDown = (e) => {
     e.preventDefault();
@@ -124,19 +124,8 @@ export default function WebDAVPanel({ client, onDisconnect, path, onFileClick })
         setLoading(false);
       }
     }
-  }, [fetchDirectory]);
+  }, [fetchDirectory, findNode]);
 
-  const findNode = (tree, path) => {
-    for (const node of tree) {
-      if (node.filename === path) return node;
-      if (node.children) {
-        const found = findNode(node.children, path);
-        if (found) return found;
-      }
-    }
-    return null;
-  };
-  
   useEffect(() => {
     if (client && path) {
       if (abortControllerRef.current) {

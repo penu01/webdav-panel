@@ -47,7 +47,6 @@ export default function QuizTest() {
       const correctIndex = shuffled[0].options.indexOf(
         shuffled[0].options[ord(shuffled[0].correct) - 65]
       );
-      const correctOption = shuffled[0].options[correctIndex];
       const shuffledOpts = options.sort(() => Math.random() - 0.5);
       setShuffledOptions(shuffledOpts);
     }
