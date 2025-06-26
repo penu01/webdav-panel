@@ -1,25 +1,64 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useTheme } from '@context/ThemeContext';
 
-export default function QuizHome() {
-  const [isStarting, setIsStarting] = useState(false);
+export default function QuizIndex() {
+  const [stats, setStats] = useState({
+    totalQuizzes: 0,
+    averageScore: 0,
+    bestScore: 0
+  });
+  const { theme, toggleTheme } = useTheme();
 
-  const startQuiz = () => {
-    setIsStarting(true);
-    // Quiz sayfasına yönlendir
-    window.location.href = '/quiz/test';
-  };
+  useEffect(() => {
+    // LocalStorage'dan quiz istatistiklerini al
+    try {
+      const storedResults = localStorage.getItem('quizResults');
+      if (storedResults) {
+        const results = JSON.parse(storedResults);
+        const totalQuizzes = results.length;
+        const averageScore = totalQuizzes > 0 
+          ? Math.round(results.reduce((sum, result) => sum + result.percentage, 0) / totalQuizzes)
+          : 0;
+        const bestScore = totalQuizzes > 0 
+          ? Math.max(...results.map(result => result.percentage))
+          : 0;
+
+        setStats({ totalQuizzes, averageScore, bestScore });
+      }
+    } catch {
+      // Handle error silently
+    }
+  }, []);
 
   return (
     <>
       <Head>
-        <title>Toplu Ulaşım Quiz - WebDAV Panel</title>
-        <meta name="description" content="2 Temmuz sınavına hazırlık quiz sistemi" />
+        <title>Quiz - WebDAV Panel</title>
       </Head>
       
-      <div className="quiz-container">
+      <div className={`quiz-container ${theme}-theme`}>
         <div className="quiz-content">
+          {/* Theme Toggle Button */}
+          <div className="quiz-theme-toggle">
+            <button
+              onClick={() => toggleTheme(theme === 'light' ? 'dark' : 'light')}
+              className="theme-toggle-button"
+              title={theme === 'light' ? 'Karanlık temaya geç' : 'Aydınlık temaya geç'}
+            >
+              {theme === 'light' ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              )}
+            </button>
+          </div>
+
           {/* Header */}
           <div className="quiz-header">
             <Link href="/" className="quiz-back-link">
@@ -37,92 +76,64 @@ export default function QuizHome() {
             </p>
           </div>
 
-          {/* Quiz Info Cards */}
+          {/* Stats Cards */}
           <div className="quiz-cards">
             <div className="quiz-card blue">
-              <div className="quiz-card-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-              <h3 className="quiz-card-title">Soru Sayısı</h3>
-              <p className="quiz-card-value">27 Soru</p>
-              <p className="quiz-card-subtitle">25 normal + 2 ek soru</p>
+              <div className="quiz-card-icon">📊</div>
+              <div className="quiz-card-title">Toplam Quiz</div>
+              <div className="quiz-card-value">{stats.totalQuizzes}</div>
+              <div className="quiz-card-subtitle">Tamamlanan quiz sayısı</div>
             </div>
-
+            
             <div className="quiz-card green">
-              <div className="quiz-card-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                </svg>
-              </div>
-              <h3 className="quiz-card-title">Puan Sistemi</h3>
-              <p className="quiz-card-value">100 Puan</p>
-              <p className="quiz-card-subtitle">Her normal soru 4 puan</p>
+              <div className="quiz-card-icon">🎯</div>
+              <div className="quiz-card-title">Ortalama Puan</div>
+              <div className="quiz-card-value">%{stats.averageScore}</div>
+              <div className="quiz-card-subtitle">Tüm quizlerin ortalaması</div>
             </div>
-
+            
             <div className="quiz-card purple">
-              <div className="quiz-card-icon">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="quiz-card-title">Süre</h3>
-              <p className="quiz-card-value">Sınırsız</p>
-              <p className="quiz-card-subtitle">Kendi hızınızda çözün</p>
+              <div className="quiz-card-icon">🏆</div>
+              <div className="quiz-card-title">En İyi Puan</div>
+              <div className="quiz-card-value">%{stats.bestScore}</div>
+              <div className="quiz-card-subtitle">En yüksek quiz puanı</div>
             </div>
           </div>
 
-          {/* Quiz Rules */}
+          {/* Rules */}
           <div className="quiz-rules">
             <h2 className="quiz-rules-title">📋 Quiz Kuralları</h2>
             <div className="quiz-rules-grid">
               <ul className="quiz-rules-list">
+                <li>Toplam 27 soru (25 normal + 2 ek soru)</li>
                 <li>Her normal soru 4 puan değerindedir</li>
-                <li>2 ek soru puan eklemez</li>
-                <li>Şıklar her seferinde karıştırılır</li>
+                <li>Ek sorular puan eklemez (sadece bilgi amaçlı)</li>
+                <li>Maksimum puan: 100</li>
               </ul>
               <ul className="quiz-rules-list">
-                <li>Her sorudan sonra açıklama gösterilir</li>
-                <li>Sonuçlarınız kaydedilir</li>
+                <li>Sorular ve şıklar her quiz'de karıştırılır</li>
+                <li>Her quiz'de farklı 2 soru bonus olur</li>
+                <li>Sonuçlarınız otomatik olarak kaydedilir</li>
                 <li>İstediğiniz kadar tekrar edebilirsiniz</li>
               </ul>
             </div>
           </div>
 
-          {/* Action Buttons */}
+          {/* Actions */}
           <div className="quiz-actions">
-            <button
-              onClick={startQuiz}
-              disabled={isStarting}
-              className="quiz-start-button"
-            >
-              {isStarting ? (
-                <>
-                  <div className="quiz-loading-spinner"></div>
-                  Quiz Başlatılıyor...
-                </>
-              ) : (
-                <>
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Teste Başla
-                </>
-              )}
-            </button>
-
-            <div>
-              <Link 
-                href="/quiz/results"
-                className="quiz-results-link"
-              >
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-                Önceki Sonuçları Görüntüle
-              </Link>
-            </div>
+            <Link href="/quiz/test" className="quiz-start-button">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Quiz&apos;e Başla
+            </Link>
+            
+            <Link href="/quiz/results" className="quiz-results-link">
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              Sonuçları Görüntüle
+            </Link>
           </div>
         </div>
       </div>
