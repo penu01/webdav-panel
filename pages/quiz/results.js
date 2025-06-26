@@ -13,7 +13,7 @@ export default function QuizResults() {
       if (storedResults) {
         setResults(JSON.parse(storedResults));
       }
-    } catch (error) {
+    } catch {
       // Handle error silently or show user-friendly message
       setResults([]);
     }
@@ -97,13 +97,13 @@ export default function QuizResults() {
               </div>
               <h3 className="quiz-results-empty-title">Henüz Sonuç Yok</h3>
               <p className="quiz-results-empty-text">
-                İlk quiz'inizi tamamladığınızda sonuçlarınız burada görünecek.
+                İlk quiz&apos;inizi tamamladığınızda sonuçlarınız burada görünecek.
               </p>
               <Link 
                 href="/quiz"
                 className="quiz-new-button"
               >
-                Quiz'e Başla
+                Quiz&apos;e Başla
               </Link>
             </div>
           ) : (
@@ -218,7 +218,7 @@ export default function QuizResults() {
                   href="/quiz"
                   className="quiz-new-button"
                 >
-                  Yeni Quiz Başlat
+                  Quiz&apos;e Başla
                 </Link>
               </div>
             </>

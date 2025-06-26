@@ -117,7 +117,6 @@ export default function FilesPage() {
             router.reload(); // Easiest way to refresh
             
         } catch(err) {
-            console.error(err);
             alert(err.message);
         }
     };

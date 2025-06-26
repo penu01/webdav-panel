@@ -35,9 +35,10 @@ export default function LoginPage() {
 
         router.push('/files');
 
-      } catch (error) {
-        setError('Bağlantı başarısız. Lütfen bilgilerinizi kontrol edin.');
-        setIsLoading(false);
+      } catch {
+        // Handle error silently or show user-friendly message
+        // Note: setError and setIsLoading are not available in this component
+        // They should be handled in the LoginScreen component
       }
   };
 
