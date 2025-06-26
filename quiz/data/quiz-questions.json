@@ -361,7 +361,7 @@
     ],
     "correct": "E",
     "explanation": "Dairesel hatlar merkezi alan içinden geçen radyal yönleri izler.",
-    "is_bonus": true
+    "is_bonus": false
   },
   {
     "id": 27,
@@ -375,6 +375,6 @@
     ],
     "correct": "A",
     "explanation": "Kısa trenler işletilerek düşük işletme maliyetleri sağlanır.",
-    "is_bonus": true
+    "is_bonus": false
   }
 ] 
