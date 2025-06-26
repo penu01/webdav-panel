@@ -26,6 +26,7 @@ export default function Header({ onDisconnect, onShowSettings }) {
       <div className={styles.logo} onClick={() => router.push('/files')} style={{cursor:'pointer'}}>
         Filestash
       </div>
+      
       <div className={styles.profileMenu} ref={menuRef}>
         <button 
           className={styles.profileButton} 

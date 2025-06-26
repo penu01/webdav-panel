@@ -1,0 +1,182 @@
+Soru 1 :Minimumdan daha büyük refüj, durak alanı hangi yöntemle oluşturulur?
+A-) Raylara hafif S kurbu verilerek
+B-) Kare şeklinde dokulu kaplama kullanarak
+C-) Enerji hattının konumunu değiştirerek
+D-) Sinyal adası tasarlayarak
+E-) Caddeyi genişleterek
+
+Soru 2 : Aşağıdakilerden hangisi kontrollü erişim istasyonlarını kullanan yolcuların beklentilerinden değildir?
+A-) Hizmet hakkında bilgi, yönlendirme
+B-) Hatlar arası aktarma yaparken minimum zaman ve mesafe
+C-) Minimum işletme maliyetleri
+D-) Estetik olan hoş tasarım, hava şartlarından korunma
+E-)  Emniyet ve güvenlik
+Soru 3 : Aşağıdaki modlardan hangisi 60 saniyelik sefer aralıklarında hizmet sağlayabilir?
+A-) VAL modu
+B-) Bölgesel Demiryolu
+C-) Cadde Tramvayı
+D-) Hafif Raylı Sistem
+E-)  Yerel Demiryolu
+
+Soru 4 :İşletme birimi türlerinden (Single Units - SU) tekli araçların en önemli avantajı nedir?
+A-) Temel işletme birimi ne kadar küçükse içerdiği ekipmanlar o kadar fazla olur. Bakımı kolaylaşır.
+B-) Araçların iki ucunda makinist kumanda seti bulunması satın alma maliyetini azaltır.
+C-) Her araç kendi başına çalışabildiğinde maksimum İşletme esnekliği sağlanmış olur.
+D-) Trenlerde boji başına araç gövdesi uzunluğu mümkün olduğunca yüksek olur.
+E-)  Tüm yardımcı mekanik ve elektrikli ekipmanlar daha az maliyetli olur.
+Soru 5 : (Articulated Units) Körüklü Araçların kullanımı hangi durumda yarar sağlar?
+A-) Tek bir aracın arıza yapması durumunda
+B-) Pik dışı saatlerde kullanıldığında
+C-) Yolcu hacimlerinin günün çoğu saatinde yüksek seviyelerde olduğu durumlarda
+D-) Minimum araç-kilometre ile işletmeye ihtiyaç olduğunda
+E-) Aynı hatta birden fazla işletme birimi türüne ihtiyaç duyulduğunda
+Soru 6 : Duraklar arasındaki açık bir hatta elde edilebilen en kısa sefer aralığı olarak tanımlanan terim aşağıdakilerden hangisidir?
+A-) Yön Sefer Aralığı
+B-) İstasyon Sefer Aralığı
+C-) İlkesel Sefer Aralığı
+D-) Minimum Sefer Sıklığı
+E-) Maksimum Sefer Aralığı
+
+
+
+Soru 7 : Bir toplu taşıma biriminin bir uç istasyondan çıkışı ile hattaki diğer uç istasyona varışı arasındaki tarifeli zaman aralığı olarak ifade edilen süre aşağıdakilerden hangisidir?
+A-) İstasyondan İstasyona Yolculuk Süresi
+B-) Erişim Süresi
+C-) Tam Tur Süresi
+D-) İşletme Süresi
+E-) İstasyonda Kalış Süresi
+Soru 8 : Toplu ulaşım işletmesi için sefer tarifesi belirlemede kullanılan, yatırımları ve işletme maliyetlerini önemli ölçüde etkileyen temel zaman birimi aşağıdakilerden hangisidir?
+A-) Tam Tur Süresi
+B-) Uç İstasyon Süresi
+C-) Peron Süresi
+D-) İşletme Süresi
+E-) Aracın Yolcu Taşımadığı Süre
+Soru 9 : Aşağıda verilen ulaşım modlarının hangisinde araç kapasitesi hesaplanırken sadece koltuk sayısı dikkate alınır?
+A-) Bölgesel Demiryolu
+B-) Hafif Raylı Sistem
+C-) Tramvay
+D-) Metro
+E-) Şehir İçi Otobüs Hattı
+Soru 10 : Aşağıda verilen sürelerden hangisi toplu ulaşım hattı işletmesi için iş gücü gereksinimlerinin hesaplanmasında net çalışma süresini temsil eder?
+A-) Tam Tur Süresi
+B-) Hattaki Yolculuk Süresi
+C-) Aracın Yolcu Taşımadığı Süre
+D-) Peron Süresi
+E-) Aktarma Süresi
+Soru 11 :Düzenli işletme için gerekli araçlar, yedekte bekleyen araçlar, bakım ve onarımda bekleyen araçlar toplamı aşağıda verilen hangi bileşeni meydana getirir?
+A-) Filoların Araç İçi Kapasitesi
+B-) Yolcu Akımı
+C-) Filo Kullanım Faktörü
+D-) Toplu Taşıma Birimleri
+E-) Filo Büyüklüğü
+Soru 12 : Toplu ulaşım hattında gerekli ulaşım kapasitesinin planlanmasında kullanılan en önemli faktör hangisidir?
+A-) A(s) – İnişlerin Kümülatif Toplamı
+B-) C – Sunulan Kapasite
+C-) P(max) – Maksimum Yolcu Hacmi
+D-) Filo Kullanım Faktörü
+E-) B(s) – Binişlerin Kümülatif Toplamı
+
+Soru 13 : Minimum sefer aralığının belirlenmesinde hangi bileşenler kullanılmaktadır?
+A-) Gerçekleşen Kapasite, Sunulan Kapasite
+B-) Yön Sefer Aralığı, İstasyon Sefer Aralığı
+C-) İlkesel Sefer Aralığı, Sefer Sıklığı
+D-) Filo Kullanım Faktörü, Toplu Ulaşım Hat Kapasitesi
+E-) İstasyon Sefer Aralığı, Araç Kapasitesi
+Soru 14 :Aşağıda gösterilen raylı ulaşım hattı şemasına göre bağlantılar dikkate alınarak toplam hat uzunluğu ve ağ uzunluğu değerlerini hesaplayınız.
+(Her bağlantı uzunluğu: AB = BC = CD = DE = FI = IK = KL = LM = NP = PR = ST = 3 km;
+EF, FG, FH, MN, MS = 2 km;
+MD = 1 km)
+A-) Toplam Hat Uzunluğu = 56 km; Ağ Uzunluğu = 47 km
+B-) Toplam Hat Uzunluğu = 47 km; Ağ Uzunluğu = 39 km
+C-) Toplam Hat Uzunluğu = 50 km; Ağ Uzunluğu = 41 km
+D-) Toplam Hat Uzunluğu = 53 km; Ağ Uzunluğu = 44 km
+E-) Toplam Hat Uzunluğu = 44 km; Ağ Uzunluğu = 38 km
+Soru 15 :Bir veya birden fazla hattın hizmet verdiği tüm güzergâhların toplam uzunluğu olarak ifade edilen terim aşağıdakilerden hangisidir?
+A-) İstasyon Uzunluğu
+B-) Toplam Güzergâh Uzunluğu
+C-) Hat Uzunluğu
+D-) İki Durak Arası Uzunluk
+E-) Ağ Uzunluğu
+Soru 16 :Filo kullanım faktörünün hesabı aşağıdakilerin hangisinde doğru olarak verilmiştir?
+(N = Düzenli İşletme İçin Gerekli Araçlar; Nr = Yedek Araçlar; Nf = Filo Büyüklüğü; Nm = Bakım ve Onarımda olan araçlar)
+A-) (N + Nr + Nf + Nm) / Nf
+B-) (Nm + Nr) / (N + Nf)
+C-) Nr + (Nf / N)
+D-) (N + Nr) / Nf
+E-) N + Nr + Nf + Nm
+Soru 17 : Çoğu potansiyel toplu ulaşım kullanıcısının aşağıdaki seçeneklerden hangisinin gerçekleşmesi durumunda sistemi kullanmaya daha fazla istekli olacağı düşünülebilir?
+A-) Toplu ulaşım sisteminin hizmet kalitesinin yüksek olması
+B-) Potansiyel yolcuların yürüme, bisiklet ve otobüsle sisteme erişiminin olması
+C-) Toplu ulaşım sisteminin 10 dk'lık yürüme mesafesinde (800 m) ulaşılabilir olması
+D-) Toplu ulaşım sisteminin 5 dk'lık yürüme mesafesinde (400 m) ulaşılabilir olması
+E-) Özel araçla erişim gibi besleme modlarının kullanılabilir olması
+
+
+
+Soru 18 :Aşağıdakilerden hangisi besleme hatların kılçık hatlara göre avantajlarından değildir?
+A-) Filo boyutu daha küçüktür ve işletme maliyetleri düşüktür.
+B-) Ağ içerisinde daha fazla bağlantı sağlayarak besleme hatlar arasında da aktarma olanağı sunar.
+C-) Düzenli sefer aralıkları ana hatta ve her bir besleme hattında uygulanabilir.
+D-) Ana hatta ve besleme hatlar arasında gecikmeler daha düşük ihtimaldedir.
+E-) Aktarma istasyonlarına ihtiyaç duyulmaz.
+Soru 19 :Tüneller ve köprüler ile toplu ulaşım geçişlerine en uzun ve en büyük örnek hangisidir?
+A-) Avrasya Tüneli
+B-) Zigana Tüneli
+C-) Ovit Tüneli
+D-) Manş Tüneli
+E-) Marmaray Tüneli
+Soru 20 : Besleme hattı olan hafif raylı sistem hatları kendi içlerinde hangi toplu ulaşım hattı türündedir?
+A-) Döngüsel Hat
+B-) Radyal Hat
+C-) Teğet Hat
+D-) Çapsal Hat
+E-) Çevresel Hat
+Soru 21 :Toplu ulaşım sistemini tasarlamada baskın olan hedef aşağıdakilerden hangisidir?
+A-) Yüksek yaşam kalitesi oluşturmak
+B-) Şehrin ihtiyaçlarını karşılamak
+C-) Arzu edilen arazi kullanım modellerini gerçekleştirmek
+D-) Mümkün olduğunca çok yolcu çekmek
+E-) Sürdürülebilir ulaşım modelleri geliştirmek
+Soru 22 :
+I. Duraklar
+II. Ağ
+III. Araç konfigürasyonları
+IV. İstasyonlar
+Yukarıda verilenlerden hangisi ya da hangileri toplu ulaşım sisteminin ana altyapı bileşenlerini oluşturur?
+A-) Yalnız III
+B-) Yalnız II
+C-) Yalnız IV
+D-) III ve IV
+E-) I, II ve IV
+Soru 23 : C sınıfı yol kullanım hakkı olan, istenildiği zaman kolayca değiştirilebilen hatlar aşağıdakilerden hangisidir?
+A-) Metro hatları
+B-) Troleybüs hatları
+C-) Cadde tramvayı hatları
+D-) Hafif raylı sistem hatları
+E-) Otobüs hatları
+
+Soru 24 :Yayaların ve farklı erişim modlarındaki araçların rahat erişimini sağlamak amacıyla son istasyonlar nereye yerleştirilmelidir?
+A-) Ana caddelere yakın yere
+B-) Cep hatlarının yakınına
+C-) Kılçık hatların aktarma noktasına
+D-) Depolama alanlarının yanına
+E-) Manevra istasyonlarının yanına
+Soru 25 : Hızlı toplu ulaşımda (A sınıfı) yol kullanım hakkına sahip metro sistemlerinde işletme hızını belirleyen ana faktör hangisidir?
+A-) İstasyon aralıkları
+B-) Yolculuk mesafesi
+C-) Erişim modu
+D-) Ücret toplama sistemi
+E-) Taşıdığı yolcu sayısı
+Soru 26 :Dairesel hatların kullanımı genellikle çok yüksektir. Bu hatların en önemli özelliği aşağıdakilerden hangisidir?
+A-) Şehir merkezinden geçerek en kısa yoldan zıt yönlerdeki banliyölere bağlanırlar.
+B-) Bazı toplu taşıma birimleri merkezden sadece orta noktalara işler ve sonra geri döner.
+C-) Bunlar merkezden dışarı doğru azalan yolcu hacmine sahiptir.
+D-) Kısa yolculuklara hizmet ederler ve yolcu gelirleri yüksektir.
+E-) Bunlar merkezi alan içinden geçen radyal yönleri izler.
+Soru 27 :Bazı metro sistemlerinde, özellikle hafta sonları ve akşam/gece saatlerinde yolcu talebi uzun süreler boyunca düşüktür. Böyle durumlarda çok kısa trenler işletilerek aşağıdaki avantajlardan hangisi sağlanır?
+A-) Düşük işletme maliyetleri
+B-) Güvenli takip mesafesi
+C-) Yolcu memnuniyeti
+D-) Daha az yatırım maliyetleri
+E-) Yüksek sistem performansı
+

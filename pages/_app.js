@@ -1,4 +1,5 @@
 import '@styles/globals.css'
+import '../quiz/styles/quiz.css'
 import Head from 'next/head'
 import { ThemeProvider } from '@context/ThemeContext'
 import { SettingsProvider } from '@context/SettingsContext'
