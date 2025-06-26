@@ -36,9 +36,8 @@ export default function LoginPage() {
         router.push('/files');
 
       } catch (error) {
-        console.error('Bağlantı hatası:', error);
-        // LoginScreen'e hata mesajı göndermek için bu hatayı yeniden fırlatabiliriz
-        throw error;
+        setError('Bağlantı başarısız. Lütfen bilgilerinizi kontrol edin.');
+        setIsLoading(false);
       }
   };
 

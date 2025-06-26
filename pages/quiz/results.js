@@ -8,16 +8,14 @@ export default function QuizResults() {
   const [showDetails, setShowDetails] = useState(false);
 
   useEffect(() => {
-    // LocalStorage'dan sonuçları al
-    const storedResults = localStorage.getItem('quizResults');
-    if (storedResults) {
-      try {
-        const parsedResults = JSON.parse(storedResults);
-        setResults(Array.isArray(parsedResults) ? parsedResults : []);
-      } catch (error) {
-        console.error('Sonuçlar yüklenirken hata:', error);
-        setResults([]);
+    try {
+      const storedResults = localStorage.getItem('quizResults');
+      if (storedResults) {
+        setResults(JSON.parse(storedResults));
       }
+    } catch (error) {
+      // Handle error silently or show user-friendly message
+      setResults([]);
     }
   }, []);
 

@@ -66,8 +66,7 @@ export default function FileViewer({ file, client, onClose, onRename, onDelete }
         if (err.name === 'AbortError') {
           return;
         }
-        console.error("[FileViewer] Fetch error:", err);
-        setError(err.message);
+        setError('Dosya yüklenirken hata oluştu.');
         setStatus('error');
       }
     };
@@ -175,7 +174,6 @@ export default function FileViewer({ file, client, onClose, onRename, onDelete }
       setStatus('success');
       // Optionally show a success message to the user
     } catch (err) {
-      console.error('Save error:', err);
       setError(err.message);
       setStatus('error');
     }

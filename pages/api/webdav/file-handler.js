@@ -37,7 +37,7 @@ async function parseJsonBody(req) {
         const body = Buffer.concat(chunks).toString();
         req.body = body ? JSON.parse(body) : {};
         resolve();
-      } catch (e) {
+      } catch {
         reject(new Error('Invalid JSON'));
       }
     });
@@ -99,7 +99,6 @@ export default async function handler(req, res) {
         await client.getDirectoryContents('/');
         return res.status(200).json({ message: 'Bağlantı başarılı.' });
       } catch (error) {
-        console.error('Connection test failed:', error);
         // Hata detayını istemciye gönderelim
         throw error;
       }
@@ -209,7 +208,7 @@ export default async function handler(req, res) {
     }
 
   } catch (error) {
-    console.error(`WebDAV File Handler API Error for action: ${req.query.action}`, error);
+    // Error handling without console.log
     
     let message = 'İşlem sırasında bir hata oluştu.';
     let status = 500;

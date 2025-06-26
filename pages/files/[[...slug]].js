@@ -23,7 +23,7 @@ export default function FilesPage() {
       // Oturum açılmamışsa ve router hazırsa, giriş sayfasına yönlendir
       router.replace('/');
     }
-  }, [router.isReady]);
+  }, [router.isReady, router]);
 
   // Logic to open file viewer based on URL query
   useEffect(() => {
@@ -91,7 +91,6 @@ export default function FilesPage() {
                 handleCloseViewer();
                 router.reload(); // Easiest way to refresh file list
             } catch (err) {
-                console.error(err);
                 alert(err.message);
             }
         }

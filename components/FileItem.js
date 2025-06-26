@@ -83,18 +83,15 @@ export default function FileItem({
               body: JSON.stringify(client),
               signal: abortControllerRef.current.signal
           });
-          if (response.ok) {
-              const blob = await response.blob();
-              const objectURL = URL.createObjectURL(blob);
-              setThumbnailUrl(objectURL);
-          } else {
-              console.error(`Thumbnail fetch failed for ${file.basename} with status: ${response.status}`);
+          if (!response.ok) {
+            // Handle error silently
+            return;
           }
+          const blob = await response.blob();
+          const url = URL.createObjectURL(blob);
+          setThumbnailUrl(url);
       } catch (error) {
-          if (error.name === 'AbortError') {
-              return;
-          }
-          console.error(`Thumbnail fetch error for ${file.basename}:`, error);
+        // Handle error silently
       }
   };
   
