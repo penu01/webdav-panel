@@ -26,7 +26,7 @@ Modern ve kullanıcı dostu bir WebDAV istemci paneli. Dosyalarınızı güvenle
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone https://github.com/your-username/webdav-panel.git
+git clone https://github.com/penu01/webdav-panel.git
 cd webdav-panel
 ```
 
